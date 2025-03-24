@@ -1,0 +1,26 @@
+<!-- components/charging-table/charging-table.wxml -->
+<view class="table-container">
+  <view class="table">
+    <!-- 表格头部 -->
+    <view class="table-row table-header">
+      <view class="table-cell" style="width: 60rpx;">序号</view>
+      <view class="table-cell" style="width: 180rpx;">开始时间</view>
+      <view class="table-cell" style="width: 180rpx;">结束时间</view>
+      <view class="table-cell" style="width: 80rpx;">时长</view>
+      <view class="table-cell" style="width: 80rpx;">度数</view>
+      <view class="table-cell" style="width: 80rpx;">周几</view>
+    </view>
+    
+    <!-- 表格数据行 -->
+    <block wx:for="{{chargingRecords}}" wx:key="id">
+      <view class="table-row">
+        <view class="table-cell" style="width: 60rpx;">{{item.id}}</view>
+        <view class="table-cell" style="width: 180rpx;">{{item.createTime}}</view>
+        <view class="table-cell" style="width: 180rpx;">{{item.endTime}}</view>
+        <view class="table-cell" style="width: 80rpx;">{{item.minutes}}</view>
+        <view class="table-cell {{isHighDegree(item.degrees) ? 'degrees-high' : ''}}" style="width: 80rpx;">{{item.degrees}}</view>
+        <view class="table-cell" style="width: 80rpx;">{{item.weekName || '周一'}}</view>
+      </view>
+    </block>
+  </view>
+</view>

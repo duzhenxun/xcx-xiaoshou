@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "charging-table": "/components/charging-table/charging-table"
+  }
+}

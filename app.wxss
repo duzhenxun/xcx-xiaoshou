@@ -1,0 +1,84 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page {
+  background-color: #f8f8f8;
+  min-height: 100vh;
+  padding-bottom: 40rpx;
+}
+
+/* 表格样式 */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10rpx;
+  overflow: hidden;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.table-header {
+  background-color: #4285f4;
+  color: white;
+  font-weight: bold;
+}
+
+.table-row {
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.table-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-cell {
+  padding: 20rpx 10rpx;
+  text-align: center;
+  font-size: 28rpx;
+}
+
+.degrees-high {
+  color: #e53935;
+  font-weight: 500;
+}
+
+/* 汇总区域样式 */
+.summary-container {
+  width: 100%;
+  padding: 30rpx 20rpx;
+  box-sizing: border-box;
+}
+
+.summary-card {
+  background-color: white;
+  border-radius: 10rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
+}
+
+.summary-title {
+  font-size: 32rpx;
+  color: #333;
+  text-align: center;
+  padding: 10rpx 0;
+}
+
+.summary-content {
+  font-size: 28rpx;
+  color: #666;
+  padding: 10rpx 0;
+}

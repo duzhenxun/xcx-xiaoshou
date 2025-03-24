@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": {},
+  "componentPlaceholder": {
+    "type": "view",
+    "style": "height: 300rpx; display: flex; justify-content: center; align-items: center; background-color: #f8f8f8; color: #999; font-size: 28rpx;",
+    "text": "充电记录加载中..."
+  }
+}
