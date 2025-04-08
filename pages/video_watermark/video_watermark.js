@@ -203,10 +203,11 @@ Page({
       downloadState: 'starting'
     });
     
-    // 显示加载提示
-    wx.showLoading({
-      title: '准备下载...',
-      mask: true
+    // 显示简单的提示，进度将在下载过程中显示
+    wx.showToast({
+      title: '开始下载',
+      icon: 'none',
+      duration: 1500
     });
     
     let videoUrl = this.data.videoInfo.videoUrl;
@@ -275,8 +276,6 @@ Page({
       enableHttp2: true,
       enableQuic: true,
       success: (res) => {
-        // 隐藏加载提示
-        wx.hideLoading();
         
         // 成功下载完成
         if (res.statusCode === 200) {
@@ -354,7 +353,6 @@ Page({
       },
       fail: (err) => {
         console.error('下载视频失败', err);
-        wx.hideLoading();
         
         this.setData({ 
           isDownloading: false,
@@ -378,12 +376,7 @@ Page({
         downloadState: 'downloading'
       });
       
-      // 更新加载提示
-      wx.showLoading({
-        title: `下载中 ${progress}%`,
-        mask: true
-      });
-      
+      // 只在控制台输出进度信息，不显示加载提示
       console.log(`下载进度: ${progress}%, ${downloadedMB}MB/${totalMB}MB`);
     });
     
@@ -423,7 +416,6 @@ Page({
   cancelDownload() {
     if (this.downloadTask && this.data.isDownloading) {
       this.downloadTask.abort();
-      wx.hideLoading();
       
       this.setData({
         isDownloading: false,

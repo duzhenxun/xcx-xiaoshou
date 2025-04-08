@@ -3,6 +3,7 @@
   "projectname": "xcx",
   "setting": {
     "compileHotReLoad": true,
-    "urlCheck": true
+    "urlCheck": true,
+    "autoAudits": true
   }
 }
