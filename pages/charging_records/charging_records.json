@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "charging-table": "/components/charging-table/charging-table"
+  },
+  "navigationBarTitleText": "充电记录"
+}

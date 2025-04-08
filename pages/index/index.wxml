@@ -1,42 +1,27 @@
 <!--index.wxml-->
-<view class="page">
-  <!-- 日期输入区域 -->
-  <view class="date-picker-container">
-    <view class="date-picker-row">
-      <view class="date-picker-label">开始日期:</view>
-      <picker mode="date" value="{{startDate}}" start="2023-01-01" end="2025-12-31" bindchange="bindStartDateChange" class="date-picker">
-        <view class="date-input">{{startDate || '请选择开始日期'}}</view>
-      </picker>
-    </view>
-    <view class="date-picker-row">
-      <view class="date-picker-label">结束日期:</view>
-      <picker mode="date" value="{{endDate}}" start="2023-01-01" end="2025-12-31" bindchange="bindEndDateChange" class="date-picker">
-        <view class="date-input">{{endDate || '请选择结束日期'}}</view>
-      </picker>
-    </view>
-    <button class="search-button" bindtap="handleSearch">
-      <view class="button-icon"></view>
-      <text class="button-text">查询充电记录</text>
-    </button>
-  </view>
-  
-  <view class="summary-container">
-    <view class="summary-card">
-      <view class="summary-title">{{dateRange}}</view>
-      <view class="summary-total">
-        <text class="total-label">总电量</text>
-        <text class="total-degrees">{{totalDegrees}}</text>
-        <text class="total-unit">度</text>
+<view class="container">
+  <view class="grid-container">
+    <block wx:for="{{modules}}" wx:key="id">
+      <view class="grid-item" bindtap="navigateToModule" data-page="{{item.page}}" data-id="{{item.id}}" data-name="{{item.name}}">
+        <view class="grid-item-content">
+          <view class="grid-icon {{item.id}}">
+            <image src="{{item.icon}}" mode="aspectFit" class="icon-image"></image>
+          </view>
+          <text class="grid-text">{{item.name}}</text>
+        </view>
       </view>
-    </view>
+    </block>
   </view>
   
-  <!-- 使用充电表格组件，实现用时注入 -->
-  <charging-table chargingRecords="{{chargingRecords}}"></charging-table>
+  <view class="footer">
+    <text class="footer-text">© 2025 小手工具</text>
+  </view>
   
-  <view class="summary-container">
-    <view class="summary-card">
-      <view class="summary-content">* 红色数字表示充电度数较高 (>22度)</view>
-    </view>
+  <!-- 分享按钮 -->
+  <view class="share-container">
+    <button class="share-button" open-type="share">
+      <image class="share-icon" src="/images/share.png" mode="aspectFit"></image>
+      <text>分享给朋友</text>
+    </button>
   </view>
 </view>

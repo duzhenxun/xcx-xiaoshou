@@ -18,7 +18,7 @@
         <view class="table-cell" style="width: 180rpx;">{{item.createTime}}</view>
         <view class="table-cell" style="width: 180rpx;">{{item.endTime}}</view>
         <view class="table-cell" style="width: 80rpx;">{{item.minutes}}</view>
-        <view class="table-cell {{isHighDegree(item.degrees) ? 'degrees-high' : ''}}" style="width: 80rpx;">{{item.degrees}}</view>
+        <view class="table-cell {{item.degrees > 40 ? 'degrees-high' : ''}}" style="width: 80rpx;">{{item.degrees}}</view>
         <view class="table-cell" style="width: 80rpx;">{{item.weekName || '周一'}}</view>
       </view>
     </block>

@@ -1,165 +1,136 @@
 /**index.wxss**/
-/* 页面样式 */
-.page {
-  padding-top: 20rpx;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
-}
-
-/* 日期选择器样式 */
-.date-picker-container {
-  background-color: #fff;
-  border-radius: 8rpx;
-  padding: 20rpx;
-  margin-bottom: 20rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
-}
-
-.date-picker-row {
+/* 主页样式 */
+.container {
   display: flex;
-  align-items: center;
-  margin-bottom: 20rpx;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8f8f8;
+  padding: 30rpx;
 }
 
-.date-picker-label {
-  width: 150rpx;
-  font-size: 28rpx;
+/* 页头样式 */
+.header {
+  text-align: center;
+  margin-bottom: 50rpx;
+  padding: 20rpx 0;
+}
+
+.header-title {
+  font-size: 48rpx;
+  font-weight: bold;
   color: #333;
+  display: block;
+  margin-bottom: 16rpx;
 }
 
-.date-picker {
-  flex: 1;
-}
-
-.date-input {
-  flex: 1;
-  padding: 12rpx 20rpx;
-  border: 1rpx solid #ddd;
-  border-radius: 6rpx;
+.header-subtitle {
   font-size: 28rpx;
-  color: #333;
-  height: 60rpx;
-  line-height: 60rpx;
-  background-color: #fff;
-  position: relative;
+  color: #666;
+  display: block;
+}
+
+/* 网格布局 */
+.grid-container {
   display: flex;
-  align-items: center;
-}
-
-.date-input::after {
-  content: "";
-  position: absolute;
-  right: 20rpx;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 12rpx solid transparent;
-  border-right: 12rpx solid transparent;
-  border-top: 12rpx solid #999;
-}
-
-.search-button {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
   width: 100%;
-  height: 88rpx;
-  line-height: 88rpx;
-  background: linear-gradient(to right, #07c160, #09ad56);
-  color: #fff;
-  font-size: 32rpx;
-  font-weight: 500;
-  border-radius: 44rpx;
-  margin-top: 30rpx;
-  margin-bottom: 15rpx;
-  box-shadow: 0 4rpx 12rpx rgba(7, 193, 96, 0.4);
-  transition: all 0.3s ease;
-  letter-spacing: 2rpx;
-  position: relative;
+}
+
+.grid-item {
+  width: calc(50% - 16rpx);
+  margin-bottom: 32rpx;
+  background-color: #fff;
+  border-radius: 16rpx;
+  box-shadow: 0 4rpx 16rpx rgba(0, 0, 0, 0.08);
   overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:active {
+  transform: scale(0.97);
+  box-shadow: 0 2rpx 8rpx rgba(0, 0, 0, 0.05);
+}
+
+.grid-item-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx 20rpx;
+  height: 240rpx;
+}
+
+.grid-icon {
+  width: 100rpx;
+  height: 100rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50rpx;
+  position: relative;
+}
+
+.icon-image {
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+
+/* 不同模块的图标颜色 */
+.grid-icon.1 { background-color: #ff4d4f; }  /* 视频去水印 */
+.grid-icon.2 { background-color: #36cfc9; }  /* 图片修复 */
+.grid-icon.3 { background-color: #52c41a; }  /* 证件照 */
+.grid-icon.4 { background-color: #faad14; }  /* 报名统计 */
+.grid-icon.5 { background-color: #722ed1; }  /* 随机发号 */
+.grid-icon.6 { background-color: #4285f4; }  /* 充电记录 */
+.grid-icon.7 { background-color: #a0a0a0; }  /* 待添加 */
+.grid-icon.8 { background-color: #a0a0a0; }  /* 待添加 */
+
+.grid-text {
+  font-size: 28rpx;
+  color: #333;
+  text-align: center;
+  font-weight: 500;
+}
+
+/* 页脚样式 */
+.footer {
+  margin-top: auto;
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.footer-text {
+  font-size: 24rpx;
+  color: #999;
+}
+
+/* 分享按钮样式 */
+.share-container {
+  margin: 30rpx 0;
   display: flex;
   justify-content: center;
+  width: 100%;
+}
+
+.share-button {
+  background-color: #4285f4;
+  color: white;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  display: flex;
   align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 4rpx 12rpx rgba(66, 133, 244, 0.3);
 }
 
-.button-text {
-  display: inline-block;
-  position: relative;
-  z-index: 1;
-  margin-left: 10rpx;
-}
-
-.button-icon {
-  display: inline-block;
+.share-icon {
   width: 36rpx;
   height: 36rpx;
-  position: relative;
-  margin-right: 6rpx;
-  z-index: 1;
-  background-image: url("data:image/svg+xml,%3Csvg t='1616743812125' class='icon' viewBox='0 0 1024 1024' version='1.1' xmlns='http://www.w3.org/2000/svg' p-id='2345' width='32' height='32'%3E%3Cpath d='M945.066667 898.133333l-189.866667-189.866666c55.466667-64 87.466667-149.333333 87.466667-241.066667 0-204.8-168.533333-373.333333-373.333334-373.333333S96 262.4 96 467.2 264.533333 840.533333 469.333333 840.533333c91.733333 0 174.933333-34.133333 241.066667-87.466666l189.866667 189.866666c6.4 6.4 14.933333 8.533333 23.466666 8.533334s17.066667-2.133333 23.466667-8.533334c8.533333-12.8 8.533333-34.133333-2.133333-44.8zM469.333333 778.666667C298.666667 778.666667 160 640 160 469.333333S298.666667 160 469.333333 160 778.666667 298.666667 778.666667 469.333333 640 778.666667 469.333333 778.666667z' fill='%23ffffff' p-id='2346'%3E%3C/path%3E%3C/svg%3E");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.search-button::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.1);
-  transform: translateX(-100%);
-  transition: transform 0.5s ease;
-}
-
-.search-button:active {
-  transform: scale(0.98);
-  box-shadow: 0 2rpx 8rpx rgba(7, 193, 96, 0.3);
-}
-
-.search-button:active::after {
-  transform: translateX(0);
-}
-
-/* 组件间间距 */
-.charging-table {
-  margin-top: 20rpx;
-}
-
-/* 汇总卡片样式 */
-.summary-card {
-  background-color: #fff;
-  border-radius: 8rpx;
-  padding: 20rpx;
-  margin-bottom: 20rpx;
-  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.1);
-}
-
-/* 汇总标题样式 */
-.summary-title {
-  font-size: 36rpx;
-  font-weight: bold;
-  color: #07c160;
-  text-align: center;
-  margin-bottom: 10rpx;
-}
-
-/* 总度数样式 */
-.summary-total {
-  font-size: 32rpx;
-  font-weight: bold;
-  text-align: center;
-}
-
-.total-degrees {
-  color: #e53935;
-  font-size: 36rpx;
-}
-
-/* 底部说明样式 */
-.summary-content {
-  font-size: 26rpx;
-  color: #666;
-  text-align: center;
-  margin-top: 10rpx;
+  margin-right: 12rpx;
 }

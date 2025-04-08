@@ -1,0 +1,22 @@
+<view class="container">
+  <view class="coming-soon">
+    <!-- 开发中图标 -->
+    <view class="icon-container">
+      <image class="development-icon" src="/images/development.png" mode="aspectFit"></image>
+    </view>
+    
+    <!-- 开发中文字 -->
+    <view class="title">{{moduleName}}功能开发中</view>
+    
+    <!-- 描述信息 -->
+    <view class="description">
+      我们正在努力开发这项功能，预计{{returnTime}}上线
+      <view class="sub-desc">感谢您的耐心等待！</view>
+    </view>
+    
+    <!-- 返回按钮 -->
+    <view class="button-container">
+      <button class="return-button" bindtap="goBack">返回首页</button>
+    </view>
+  </view>
+</view>

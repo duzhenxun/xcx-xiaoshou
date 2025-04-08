@@ -1,0 +1,81 @@
+<view class="container">
+  <!-- 输入区域 -->
+  <view class="input-area">
+    <textarea 
+      placeholder="粘贴文案" 
+      value="{{videoUrl}}"
+      bindinput="onUrlInput"
+      class="input-box" />
+      
+    <view class="{{errorMsg.indexOf('\u89e3\u6790\u6210\u529f') > -1 ? 'success-message' : 'error-message'}}" wx:if="{{errorMsg}}">{{errorMsg}}</view>
+    
+    <view class="button-group">
+      <button class="btn parse-btn" bindtap="parseVideo">解析</button>
+      <view class="top-button-spacer"></view>
+      <button class="btn paste-btn" bindtap="pasteUrl">粘贴</button>
+    </view>
+  </view>
+  
+  <!-- 加载中 -->
+  <view class="loading-container" wx:if="{{isLoading}}">
+    <view class="loading"></view>
+    <text>正在解析中...</text>
+  </view>
+  
+  <!-- 视频信息区域 -->
+  <view class="video-info-container" wx:if="{{videoInfo && !isLoading}}">
+    <view class="video-title">{{videoInfo.title}}</view>
+    <view class="author-info">{{videoInfo.author}}</view>
+    
+    <!-- 视频播放区 -->
+    <video 
+      src="{{videoInfo.videoUrl}}" 
+      poster="{{videoInfo.coverUrl}}"
+      controls
+      show-center-play-btn="true"
+      object-fit="contain"
+      class="video-player">
+    </video>
+    
+    <!-- 操作按钮 -->
+    <view class="action-buttons">
+      <button class="action-btn" bindtap="downloadVideo">下载视频</button>
+      <view class="button-spacer"></view>
+      <button class="action-btn" bindtap="copyVideoUrl">复制视频地址</button>
+    </view>
+    
+    <!-- 下载进度条 -->
+    <view class="download-progress-container" wx:if="{{isDownloading}}">
+      <view class="progress-text">正在下载: {{downloadProgress}}%</view>
+      <view class="progress-bar-bg">
+        <view class="progress-bar" style="width: {{downloadProgress}}%;"></view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 历史记录 -->
+  <view class="history-section" wx:if="{{history.length > 0}}">
+    <view class="history-header">
+      <text class="history-title">历史记录</text>
+      <text class="clear-history" bindtap="clearHistory">清除</text>
+    </view>
+    
+    <view class="history-list">
+      <view class="history-item" wx:for="{{history}}" wx:key="index" bindtap="selectHistoryItem" data-index="{{index}}">
+        <video class="history-thumb" src="{{item.videoUrl}}" poster="{{item.coverUrl}}" object-fit="cover" show-play-btn="{{false}}" enable-progress-gesture="{{false}}" show-fullscreen-btn="{{false}}" muted="{{true}}" autoplay="{{false}}" loop="{{true}}" initial-time="0"></video>
+        <view class="history-info">
+          <text class="history-video-title">{{item.title}}</text>
+          <text class="history-author">{{item.author}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+  <!-- 分享按钮 -->
+  <view class="share-container">
+    <button class="share-button" open-type="share">
+      <image class="share-icon" src="/images/share.png" mode="aspectFit"></image>
+      <text>分享给朋友</text>
+    </button>
+  </view>
+</view>

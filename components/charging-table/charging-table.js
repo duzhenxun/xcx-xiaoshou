@@ -22,11 +22,5 @@ Component({
     }
   },
   
-  methods: {
-    // 判断电量是否较高（用于显示红色）
-    isHighDegree(degrees) {
-      // 简化判断逻辑，因为 degrees 已经在数据处理阶段转换为浮点数
-      return degrees > 22;
-    }
-  }
+  methods: {}
 })

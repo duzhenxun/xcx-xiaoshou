@@ -1,14 +1,24 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/video_watermark/video_watermark",
+    "pages/image_repair/image_repair",
+    "pages/id_photo/id_photo",
+    "pages/registration_stats/registration_stats",
+    "pages/random_number/random_number",
+    "pages/charging_records/charging_records",
+    "pages/module7/module7",
+    "pages/module8/module8",
+    "pages/coming_soon/coming_soon"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#4285f4",
-    "navigationBarTitleText": "充电记录",
+    "navigationBarTitleText": "小手工具",
     "navigationBarTextStyle": "white"
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",
-  "lazyCodeLoading": "requiredComponents"
+  "lazyCodeLoading": "requiredComponents",
+  "enableShareTimeline": true
 }

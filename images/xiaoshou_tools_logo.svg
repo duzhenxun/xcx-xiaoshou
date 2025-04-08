@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="144px" height="144px" viewBox="0 0 144 144" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3498db" />
+      <stop offset="100%" stop-color="#2980b9" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-color="rgba(0,0,0,0.3)"/>
+    </filter>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="72" cy="72" r="65" fill="url(#bgGradient)" filter="url(#shadow)" />
+  
+  <!-- Toolbox Body -->
+  <rect x="32" y="60" width="80" height="45" rx="5" ry="5" fill="#e74c3c" filter="url(#shadow)" />
+  <rect x="32" y="60" width="80" height="15" rx="5" ry="5" fill="#c0392b" />
+  
+  <!-- Toolbox Handle -->
+  <rect x="62" y="45" width="20" height="15" rx="3" ry="3" fill="#7f8c8d" />
+  
+  <!-- Tools -->
+  <!-- Wrench -->
+  <path d="M50 70 L42 78 L45 85 L52 82 L55 75 Z" fill="#f1c40f" stroke="#2c3e50" stroke-width="1.5" />
+  
+  <!-- Screwdriver -->
+  <rect x="60" y="70" width="4" height="20" fill="#e67e22" />
+  <polygon points="62,65 58,70 64,70" fill="#2c3e50" />
+  
+  <!-- Hammer -->
+  <rect x="70" y="70" width="4" height="15" fill="#8e44ad" />
+  <rect x="67" y="70" width="10" height="6" fill="#8e44ad" />
+  
+  <!-- Ruler -->
+  <rect x="80" y="70" width="20" height="4" fill="#ecf0f1" />
+  <rect x="82" y="70" width="1" height="4" fill="#34495e" />
+  <rect x="85" y="70" width="1" height="4" fill="#34495e" />
+  <rect x="88" y="70" width="1" height="4" fill="#34495e" />
+  <rect x="91" y="70" width="1" height="4" fill="#34495e" />
+  <rect x="94" y="70" width="1" height="4" fill="#34495e" />
+  <rect x="97" y="70" width="1" height="4" fill="#34495e" />
+  
+  <!-- Text -->
+  <text x="72" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="white" font-weight="bold">小手工具</text>
+</svg>

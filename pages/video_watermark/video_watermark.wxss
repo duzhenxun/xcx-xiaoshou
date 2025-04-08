@@ -1,0 +1,287 @@
+.container {
+  padding: 20rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  min-height: 100vh;
+}
+
+/* 输入区域样式 */
+.input-area {
+  width: 100%;
+  margin-bottom: 20rpx;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.input-box {
+  width: 100%;
+  height: 220rpx;
+  border: 1px solid #e5e5e5;
+  border-radius: 8rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  background-color: #f9f9f9;
+}
+
+.error-message {
+  color: #ff4d4f;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+
+.success-message {
+  color: #52c41a;
+  font-size: 24rpx;
+  margin: 10rpx 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20rpx;
+}
+
+.top-button-spacer {
+  width: 30rpx; /* 更大的间距 */
+}
+
+.btn {
+  flex: 1;
+  margin: 0 10rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parse-btn {
+  background-color: #ff5252;
+  color: white;
+}
+
+.paste-btn {
+  background-color: #4285f4;
+  color: white;
+}
+
+/* 加载动画 */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 40rpx 0;
+}
+
+.loading {
+  width: 70rpx;
+  height: 70rpx;
+  border: 6rpx solid #f3f3f3;
+  border-top: 6rpx solid #4285f4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20rpx;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 视频信息区域 */
+.video-info-container {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  margin-bottom: 20rpx;
+  box-sizing: border-box;
+}
+
+.video-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  line-height: 1.4;
+  color: #333;
+  margin-bottom: 10rpx;
+}
+
+.author-info {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 20rpx;
+}
+
+.video-player {
+  width: 100%;
+  height: 400rpx;
+  margin-bottom: 20rpx;
+  border-radius: 8rpx;
+  background-color: #000;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.button-spacer {
+  width: 20rpx;
+}
+
+.action-btn {
+  flex: 1;
+  margin: 0 10rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #fff;
+  border-radius: 8rpx;
+  background-color: #ff5252;
+  padding: 0 10rpx;
+}
+
+/* 下载进度条样式 */
+.download-progress-container {
+  margin: 20rpx 0;
+  padding: 15rpx;
+  background-color: #f9f9f9;
+  border-radius: 8rpx;
+  border: 1px solid #eee;
+}
+
+.progress-text {
+  font-size: 24rpx;
+  color: #666;
+  margin-bottom: 10rpx;
+  text-align: center;
+}
+
+.progress-bar-bg {
+  width: 100%;
+  height: 20rpx;
+  background-color: #e5e5e5;
+  border-radius: 10rpx;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4285f4;
+  border-radius: 10rpx;
+  transition: width 0.3s;
+}
+
+/* 历史记录区域 */
+.history-section {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12rpx;
+  padding: 20rpx;
+  box-shadow: 0 2rpx 10rpx rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20rpx;
+}
+
+.history-title {
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.clear-history {
+  font-size: 24rpx;
+  color: #4285f4;
+}
+
+.history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.history-item {
+  display: flex;
+  padding: 15rpx 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.history-thumb {
+  width: 160rpx;
+  height: 120rpx;
+  border-radius: 8rpx;
+  margin-right: 15rpx;
+  background-color: #eee;
+  object-fit: cover;
+}
+
+.history-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.history-video-title {
+  font-size: 26rpx;
+  line-height: 1.4;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.history-author {
+  font-size: 22rpx;
+  color: #999;
+}
+
+/* 分享按钮样式 */
+.share-container {
+  margin: 30rpx 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.share-button {
+  background-color: #4285f4;
+  color: white;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  box-shadow: 0 4rpx 12rpx rgba(66, 133, 244, 0.3);
+}
+
+.share-icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 12rpx;
+}
