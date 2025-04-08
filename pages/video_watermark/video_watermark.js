@@ -224,24 +224,16 @@ Page({
     //   }
     // }
     
-    // 生成文件名 - 作者名加"-"加介绍的前20个字
-    let fileName = '';
-    if (this.data.videoInfo) {
-      // videoInfo.author 已经映射了 additionalData.nickname
-      const nickname = this.data.videoInfo.author || '';
-      // videoInfo.title 已经映射了 additionalData.desc，只取前20个字符
-      const desc = (this.data.videoInfo.title || '').slice(0, 20);
-      // 处理非法字符
-      const safeNickname = nickname.replace(/[\/:\\*?\"<>|]/g, '_');
-      const safeDesc = desc.replace(/[\/:\\*?\"<>|]/g, '_');
-      // 组合文件名
-      fileName = `${safeNickname}-${safeDesc}`;
-      // 碰到空文件名则使用默认名
-      if (fileName === '-') fileName = 'douyin_video';
-    } else {
-      fileName = 'douyin_video';
-    }
-    console.log('下载文件名：'+fileName);
+    // 生成随机文件名
+    const generateRandomFileName = () => {
+      const timestamp = Date.now(); // 当前时间戳
+      const randomNum = Math.floor(Math.random() * 1000); // 随机数
+      return `video_${timestamp}_${randomNum}`;
+    };
+
+    // 使用随机文件名
+    let fileName = generateRandomFileName();
+    console.log('下载文件名：' + fileName);
      
     // 确保URL被正确编码处理
     // 注意：使用转换后的videoUrl进行编码
